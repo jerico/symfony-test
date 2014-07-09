@@ -15,7 +15,7 @@ class BlogController extends Controller
    */
   public function showAction($id)
   {
-    $em = $this->getDoctrine()->getEntityManager();
+    $em = $this->getDoctrine()->getManager();
 
     $blog = $em->getRepository('BloggerBlogBundle:Blog')->find($id);
 
@@ -23,8 +23,12 @@ class BlogController extends Controller
       throw $this->createNotFoundException('Unable to find Blog post.');
     }
 
+    $comments = $em->getRepository('BloggerBlogBundle:Comment')
+                   ->getCommentsForBlog($blog->getId());
+
     return $this->render('BloggerBlogBundle:Blog:show.html.twig', array(
       'blog' => $blog,
+      'comments' => $comments,
     ));
   }
 }
