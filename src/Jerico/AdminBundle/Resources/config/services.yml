@@ -1,0 +1,7 @@
+parameters:
+#    jerico_admin.example.class: Jerico\AdminBundle\Example
+
+services:
+#    jerico_admin.example:
+#        class: %jerico_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

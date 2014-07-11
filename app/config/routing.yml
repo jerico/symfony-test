@@ -1,3 +1,7 @@
+jerico_admin:
+    resource: "@JericoAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
 blogger_blog:
     resource: "@BloggerBlogBundle/Resources/config/routing.yml"
     prefix:   /
