@@ -2,12 +2,9 @@
 
 {% block stylesheets %}
   {{ parent() }}
-  {% stylesheets
-    '@BloggerBlogBundle/Resources/public/css/*'
-    output='css/blogger.css'
-  %}
-  <link href="{{ asset_url }}" rel="stylesheets" media="sceen" />
-{% endstylesheets %}
+  {% stylesheets '@BloggerBlogBundle/Resources/public/css/*' output='css/blogger.css' %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css">
+  {% endstylesheets %}
 {% endblock %}
 
 {% block sidebar %}
